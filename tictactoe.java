@@ -16,7 +16,6 @@ public class tictactoe {
         Comp.Show();
 
         do{
-            GameField.Chek_Empty_Space_on_Field();
             Comp.Go_Comp(GameField);
             GameField.Show_Game_Field();
             GameField.Chek_Win();
@@ -24,8 +23,10 @@ public class tictactoe {
                 System.out.println("Droid, win!");
                 break;
             }
+            if(GameField.Chek_Empty_Space_on_Field())
+                break;
 
-            GameField.Chek_Empty_Space_on_Field();
+
             User1.Go_User(GameField);
             GameField.Show_Game_Field();
             GameField.Chek_Win();
@@ -33,8 +34,10 @@ public class tictactoe {
                 System.out.println("WELL, i win!");
                 break;
             }
+            if(GameField.Chek_Empty_Space_on_Field())
+                break;
 
-        }while(!GameField.Show_Game_Status());
+        }while(true);
 
 
     }
